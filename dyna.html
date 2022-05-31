@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hero">
+        <div class="navbar">
+            <img src="images/product3.png" alt="" class="logo">
+            <div class="user">
+                <button type="button">Explore</button>
+                <img src="images/2.png"> 
+            </div>
+        </div>
+        <div class="container">
+            <div class="info">
+<h1>Yawe Shop</h1>
+<p>“Yawe Shop gives me a clear view of Shop's impact 
+    on my business, and provides the data and tools 
+    I need to make more sales.<br><br>
+    Yawe Shop is your control center
+     for improving your lifetime value."</p>
+     <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+
+
+
+
+
+        
+<div class="slider">
+<img src="images/left.png" id="prev" >
+<div class="preview">
+    <img src="images/small1.jpg" class="active photos">
+    
+    <img src="images/small3.jpg" class=" photos">
+    <img src="images/small4.jpg" class="photos">
+    <img src="images/small5.jpg" class="photos">
+    
+    <img src="images/small7.jpg" class="photos">
+</div>
+<img src="images/right.jpeg" id="next" >
+
+</div>
+
+
+
+    </div>
+
+    <script>
+
+var prev=document.getElementById("prev");
+var next=document.getElementById("next");
+var photos=document.getElementsByClassName("photos");
+var hero=document.getElementById("hero");
+var backgroundImg=new Array( 
+    "images/small1.jpg",
+    "images/small3.jpg",
+    "images/small4.jpg",
+    "images/small5.jpg",
+    "images/small7.jpg",
+
+);
+let i=0;
+next.onclick=function(){
+    if(i<4){
+        hero.style.backgroundImage='url("'+backgroundImg[i+1]+'")';
+    photos[i+1].classList.add("active");
+    photos[i].classList.remove("active");
+    
+        i++;
+    }
+   
+}
+prev.onclick=function(){
+    if(i>0){
+        hero.style.backgroundImage='url("'+backgroundImg[i-1]+'")';
+        photos[i-1].classList.add("active");
+    photos[i].classList.remove("active");
+    
+        i--;
+    }
+   
+}
+
+    </script>
+</body>
+</html>
